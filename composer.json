@@ -1,0 +1,19 @@
+{
+    "name": "dhammavira/library",
+    "description": "library menagement system",
+    "authors": [
+        {
+            "name": "Ashinindavudha",
+            "email": "ashinindavudha2018@gmail.com"
+        }
+    ],
+    "require": {
+        "fakerphp/faker": "^1.14"
+    },
+     "autoload": {
+        "psr-4": {
+            "Libs\\": "_classes/Libs/",
+            "Helpers\\": "_classes/Helpers/"
+        }
+    }
+}
