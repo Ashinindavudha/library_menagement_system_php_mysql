@@ -28,7 +28,7 @@ if ($type === "image/jpeg" or $type === "image/png") {
 
 	$auth->photo = $name;
 
-	HTTP::redirect("/profile.php");
+	HTTP::redirect("/admin/profile.php");
 } else {
 	HTTP::redirect("/profile.php", "error=type");
 }

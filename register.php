@@ -64,7 +64,7 @@
                     Cannot create account. Please try again......
                     </div>
                     <?php endif?>
-                    <form class="form" method="post" action="admin/_actions/create.php">
+                    <form class="form" method="post" action="_actions/create.php">
                       <div class="form-group has-default">
                         <div class="input-group">
                           <div class="input-group-prepend">

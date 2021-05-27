@@ -14,4 +14,4 @@ $table = new UsersTable(new MySQL());
 $id = $_GET['id'];
 $table->delete($id);
 
-HTTP::redirect("/admin.php");
+HTTP::redirect("/admin/userIndex.php");

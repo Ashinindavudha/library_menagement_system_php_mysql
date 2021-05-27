@@ -22,7 +22,8 @@ if ($user) {
 	}
 
 	$_SESSION['user'] = $user;
-	HTTP::redirect("/profile.php");
+	//HTTP::redirect("/profile.php");
+	HTTP::redirect("/admin/index.php");
 } else {
 	HTTP::redirect("/index.php", "incorrect=1");
 }

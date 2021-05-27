@@ -40,7 +40,7 @@ $auth = Auth::check();
         <div class="container-fluid">
           <div class="row">
             <div class="col-md-8">
-            <form action="_actions/upload.php" method="post" enctype="multipart/form-data">
+            <form action="../_actions/upload.php" method="post" enctype="multipart/form-data">
               <div class="col-md-3 col-sm-4">
                       <h4 class="title">Avatar</h4>
                       <div class="fileinput fileinput-new text-center" data-provides="fileinput">
@@ -69,7 +69,7 @@ $auth = Auth::check();
                 <div class="card-avatar">
                 <?php if ($auth->photo): ?>
                   <a href="#pablo">
-                    <img class="img" src="_actions/photos/<?=$auth->photo?>" />
+                    <img class="img" src="../_actions/photos/<?=$auth->photo?>" />
                   </a>
                   <?php endif?>
                 </div>
