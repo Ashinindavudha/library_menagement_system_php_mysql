@@ -29,4 +29,15 @@ class CategoryTable
 		$statement = $this->db->query("SELECT * FROM categories");
 		return $statement->fetchAll();
 	}
+
+	public function delete($id)
+    {
+        $statement = $this->db->prepare("
+            DELETE FROM categories WHERE id = :id
+        ");
+
+        $statement->execute([':id' => $id]);
+
+        return $statement->rowCount();
+    }
 }
