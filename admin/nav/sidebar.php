@@ -57,9 +57,9 @@
                   </a>
                 </li>
                 <li class="nav-item ">
-                  <a class="nav-link" href="../examples/pages/rtl.html">
-                    <span class="sidebar-mini"> RS </span>
-                    <span class="sidebar-normal"> RTL Support </span>
+                  <a class="nav-link" href="categoryIndex.php">
+                    <span class="sidebar-mini"> B C </span>
+                    <span class="sidebar-normal"> Book Category </span>
                   </a>
                 </li>
                 <li class="nav-item ">

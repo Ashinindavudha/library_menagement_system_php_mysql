@@ -29,45 +29,36 @@
       <div class="content">
         <!-- category create data form start -->
 
-        <div class="row">
-          <div class="col-lg-4 col-md-6 col-sm-8 ml-auto mr-auto">
-            <form class="form" method="post" action="../_actions/categoryCreate.php">
-              <div class="card card-login card-hidden">
-                <div class="card-header card-header-rose text-center">
-                  <h4 class="card-title">Login</h4>
-                  <div class="social-line">
-                    <a href="#pablo" class="btn btn-just-icon btn-link btn-white">
-                      <i class="fa fa-facebook-square"></i>
-                    </a>
-                    <a href="#pablo" class="btn btn-just-icon btn-link btn-white">
-                      <i class="fa fa-twitter"></i>
-                    </a>
-                    <a href="#pablo" class="btn btn-just-icon btn-link btn-white">
-                      <i class="fa fa-google-plus"></i>
-                    </a>
+        <div class="col-md-12">
+              <div class="card ">
+                <div class="card-header card-header-rose card-header-text">
+                  <div class="card-text">
+                    <h4 class="card-title">Form Elements</h4>
                   </div>
                 </div>
                 <div class="card-body ">
-                  <p class="card-description text-center">Or Be Classical</p>
-                  <span class="bmd-form-group">
-                    <div class="input-group">
-                      <div class="input-group-prepend">
-                        <span class="input-group-text">
-                          <i class="material-icons">face</i>
-                        </span>
+                  <form method="post" action="../_actions/categoryCreate.php" class="form-horizontal">
+                    <div class="row">
+                      <label class="col-sm-2 col-form-label">Category Name</label>
+                      <div class="col-sm-10">
+                        <div class="form-group">
+                          <input type="text" name="category" class="form-control">
+                          <span class="bmd-help">A block of help text that breaks onto a new line.</span>
+                        </div>
                       </div>
-                      <input type="text" name="category" class="form-control" placeholder="Category Name...">
                     </div>
-                  </span>
-                  
+                    <div class="card-footer ">
+                  <div class="row">
+                    <div class="col-md-9">
+                      <button type="submit" class="btn btn-fill btn-primary">Add Category</button>
+                    </div>
+                  </div>
                 </div>
-                <div class="card-footer justify-content-center">
-                  <button type="submit" class="btn btn-rose btn-link btn-lg"> Lets Go</button>
+                  </form>
                 </div>
+                
               </div>
-            </form>
-          </div>
-        </div>
+            </div>
         <!-- form end -->
       </div>
 

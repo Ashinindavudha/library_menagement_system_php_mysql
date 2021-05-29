@@ -3,8 +3,8 @@
 include "../vendor/autoload.php";
 
 use Helpers\Auth;
-use Libs\Database\MySQL;
 use Libs\Database\CategoryTable;
+use Libs\Database\MySQL;
 
 $table = new CategoryTable(new MySQL());
 $all = $table->CategoryIndex();
@@ -44,13 +44,15 @@ $auth = Auth::check();
                   <div class="card-icon">
                     <i class="material-icons">assignment</i>
                   </div>
-                  <h4 class="card-title">Category 
+                  <h4 class="card-title">Category
                     <span class="badge bg-danger text-white">
 				<?=count($all)?>
 			</span>
                   </h4>
+                  <!-- <button class="btn btn-success">Success</button> -->
                 </div>
                 <div class="card-body">
+                <a href="createCategory.php"><button class="btn btn-primary btn-lg"><i class="material-icons">input</i> Create Category</button></a>
                   <div class="toolbar">
                     <!--        Here you can write extra buttons/actions for the toolbar              -->
                   </div>
@@ -77,12 +79,12 @@ $auth = Auth::check();
                           <td><?=$category->category?></td>
                 <td class="text-right">
                   <a href="#" class="btn btn-link btn-info btn-just-icon like"><i class="material-icons">favorite</i></a>
-                   <a href="#" class="btn btn-link btn-warning btn-just-icon edit"><i class="material-icons">dvr</i></a>
+                   <a href="categoryUpdate.php?id='. $category['id'] .'" class="btn btn-link btn-warning btn-just-icon edit"><i class="material-icons">remove_red_eye</i></a>
                     <!-- <a href="#" class="btn btn-link btn-danger btn-just-icon remove"><i class="material-icons">close</i></a> -->
                     <?php if ($category->id !== $auth->id): ?>
 									<a href="../_actions/categoryDelete.php?id=<?=$category->id?>" class="btn btn-link btn-danger btn-just-icon remove" onClick="return confirm('Are you sure?')"><i class="material-icons">close</i></a>
 								<?php endif?>
-                            
+
                         </tr>
 						<?php endforeach?>
                       </tbody>
