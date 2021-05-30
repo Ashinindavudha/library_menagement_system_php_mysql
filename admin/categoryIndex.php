@@ -79,7 +79,7 @@ $auth = Auth::check();
                           <td><?=$category->category?></td>
                 <td class="text-right">
                   <a href="#" class="btn btn-link btn-info btn-just-icon like"><i class="material-icons">favorite</i></a>
-                   <a href="categoryEdit.php?id='. $category['id'] .'" class="btn btn-link btn-warning btn-just-icon edit"><i class="material-icons">remove_red_eye</i></a>
+                   <a href="categoryEdit.php?id=<?=$category->id ?>" class="btn btn-link btn-warning btn-just-icon edit"><i class="material-icons">remove_red_eye</i></a>
                     <!-- <a href="#" class="btn btn-link btn-danger btn-just-icon remove"><i class="material-icons">close</i></a> -->
                     <?php if ($category->id !== $auth->id): ?>
 									<a href="../_actions/categoryDelete.php?id=<?=$category->id?>" class="btn btn-link btn-danger btn-just-icon remove" onClick="return confirm('Are you sure?')"><i class="material-icons">close</i></a>

@@ -33,24 +33,29 @@ class CategoryTable
 
     public function findByCategoryId($id)
     {
-        $statement = $this->db->prepare("SELECT * FROM categories WHERE id = :id");
-        $statement->execute([':id' => $id]);
+        //$id = $_GET['id']; // get id through query string
+        $statement = $this->db->prepare("SELECT * FROM categories WHERE id = '$id'");
+        $statement->execute([':id' => 'id']);
         $row = $statement->fetch();
 
         return $row ?? false;
     }
 
-//     $result = mysqli_query($conn, "SELECT * FROM users WHERE id='" . $_GET['userid'] . "'");
-// $row = mysqli_fetch_array($result);
+    public function updateCategory($updatedata)
+    {
+        // $statement = $this->db->prepare(
+        //     "UPDATE categories SET id = ?, category = ? WHERE id = ?");
+        // $statement->execute();
 
-    // public function updateCategory()
-    // {
-    //     $statement = $this->db->prepare(
-    //         "UPDATE categories SET id = ?, category = ? WHERE id = ?");
-    //     $statement->execute();
-
-    //     return $statement->rowCount();
-    // }
+        // return $statement->rowCount();
+        $category = $this->db->mysqli_real_escape_string($_POST['category']);
+        $id = $this->db->mysqli_real_escape_string($_POST['id']);
+        if (!empty($id) && !empty($updatedata)) {
+            $query = "UPDATE categories SET category = '$category' WHERE id = '$id'";
+            $sql = $this->db->query($query);
+        }
+    
+    }
 
     public function update($id, $category)
     {

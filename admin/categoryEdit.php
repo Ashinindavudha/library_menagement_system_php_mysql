@@ -1,13 +1,8 @@
 <?php include "nav/head.php"?>
 <?php
-include "../vendor/autoload.php";
-
-$all = '';
-$id = '';
-use Libs\Database\CategoryTable;
-use Libs\Database\MySQL;
-$table = new CategoryTable(new MySQL());
-$all = $table->findByCategoryId($id);
+include("../_actions/server.php");
+$result = mysqli_query($link, "SELECT * FROM categories WHERE id='" . $_GET['id'] . "'");
+$row = mysqli_fetch_array($result);
 
 ?>
 <body class="">
@@ -44,7 +39,7 @@ $all = $table->findByCategoryId($id);
                       <label class="col-sm-2 col-form-label">Category Name</label>
                       <div class="col-sm-10">
                         <div class="form-group">
-                          <input type="text" name="category" class="form-control" value="<?=$all['category']?>">
+                          <input type="text" name="category" class="form-control" value="<?= $row['category'] ?>">
                           <span class="bmd-help">A block of help text that breaks onto a new line.</span>
                         </div>
                       </div>
@@ -52,9 +47,9 @@ $all = $table->findByCategoryId($id);
                     <div class="card-footer ">
                   <div class="row">
                     <div class="col-md-9">
-                    <input type="hidden" name="id" value="<?=$all['id']?>"/>
+                    <input type="hidden" name="id" value="<?=$row['id']?>"/>
 
-                      <button type="submit" class="btn btn-fill btn-primary">Add Category</button>
+                      <button type="submit" name="update" class="btn btn-fill btn-primary">Add Category</button>
                     </div>
                   </div>
                 </div>
