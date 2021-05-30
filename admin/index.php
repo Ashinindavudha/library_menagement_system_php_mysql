@@ -1,11 +1,11 @@
-<?php include("nav/head.php") ?>
+<?php include "nav/head.php"?>
 <?php
-    session_start();
-    if (!isset($_SESSION['user'])) {
-      header('location: index.php');
-      exit();
-    }
-  ?>
+session_start();
+if (!isset($_SESSION['user'])) {
+    header('location: index.php');
+    exit();
+}
+?>
 <body class="">
   <div class="wrapper ">
     <div class="sidebar" data-color="rose" data-background-color="black" data-image="../assets/img/sidebar-1.jpg">
@@ -20,19 +20,19 @@
         <a href="http://www.creative-tim.com" class="simple-text logo-normal">
           Creative Tim
         </a></div>
-     <?php include("nav/sidebar.php") ?>
+     <?php include "nav/sidebar.php"?>
     </div>
     <div class="main-panel">
       <!-- Navbar -->
-     <?php include("nav/navbar.php") ?>
+     <?php include "nav/navbar.php"?>
       <!-- End Navbar -->
       <div class="content">
-     
+
       </div>
 
-      <?php include("nav/footer.php") ?>
+      <?php include "nav/footer.php"?>
     </div>
   </div>
-  
-  
-  <?php include("nav/RightSidebar.php") ?>
+
+
+  <?php include "nav/RightSidebar.php"?>

@@ -2,11 +2,11 @@
 
 session_start();
 
-include("../vendor/autoload.php");
+include "../vendor/autoload.php";
 
+use Helpers\HTTP;
 use Libs\Database\MySQL;
 use Libs\Database\UsersTable;
-use Helpers\HTTP;
 
 $email = $_POST['email'];
 $password = md5($_POST['password']);
@@ -17,13 +17,13 @@ $user = $table->findByEmailAndPassword($email, $password);
 
 if ($user) {
 
-	if ($table->suspended($user->id)) {
-		HTTP::redirect("/index.php", "suspended=1");
-	}
+    if ($table->suspended($user->id)) {
+        HTTP::redirect("/index.php", "suspended=1");
+    }
 
-	$_SESSION['user'] = $user;
-	//HTTP::redirect("/profile.php");
-	HTTP::redirect("/admin/index.php");
+    $_SESSION['user'] = $user;
+    HTTP::redirect("/admin/profile.php");
+    //HTTP::redirect("/admin/index.php");
 } else {
-	HTTP::redirect("/index.php", "incorrect=1");
+    HTTP::redirect("/index.php", "incorrect=1");
 }
